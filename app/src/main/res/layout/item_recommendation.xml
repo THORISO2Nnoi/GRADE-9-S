@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RECOMMENDATION"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvRecommendationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommendation Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvRecommendationDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recommendation description goes here with more details about what this means for the student."
+            android:textSize="14sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvRequirements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Requirements will be shown here"
+            android:textSize="12sp"
+            android:background="@color/light_gray"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

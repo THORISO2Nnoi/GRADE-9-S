@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EduPath</string>
+    <string name="help_icon_description">Help icon</string>
+    <string name="upload_icon_description">Upload icon</string>
+    <string name="error_icon_description">Error icon</string>
+    <string name="upload_results_fab_description">Upload results</string>
+</resources>

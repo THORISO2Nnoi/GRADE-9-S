@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Upload Prompt State -->
+    <LinearLayout
+        android:id="@+id/layoutUploadPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@android:drawable/ic_menu_upload"
+            app:tint="?attr/colorPrimary"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/upload_icon_description" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Your Grade 9 Results"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload your report card to get personalized career recommendations based on your academic performance."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUploadNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Results"
+            android:textSize="16sp"
+            app:icon="@android:drawable/ic_menu_upload"
+            style="@style/Widget.Material3.Button" />
+
+        <TextView
+            android:id="@+id/tvProcessingStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Processing your document..."
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:maxLines="10"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <!-- Loading State -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- Error State -->
+    <LinearLayout
+        android:id="@+id/layoutUploadError"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@android:drawable/stat_notify_error"
+            app:tint="?attr/colorError"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="@string/error_icon_description" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Failed"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="There was an error processing your document. Please try again."
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginBottom="32dp"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRetryUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try Again"
+            android:textSize="16sp"
+            style="@style/Widget.Material3.Button" />
+
+    </LinearLayout>
+
+    <!-- Content State -->
+    <ScrollView
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Grade 9 Career Pathway"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorPrimary"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Step 1: Performance Analysis -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Step 1: Your Performance"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPerformanceSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subjects with 50% and above"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSubjects"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:minHeight="120dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Step 2: Skills Selection -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Step 2: Select Your Skills"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose skills that describe you:"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSkills"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:minHeight="120dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Step 3: Recommendations -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Step 3: Your Recommendations"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvRecommendationsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Based on your performance and skills"
+                        android:textSize="14sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRecommendations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:minHeight="120dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- FAB for uploading results -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabUploadResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_upload"
+        android:contentDescription="@string/upload_results_fab_description"
+        app:tint="@android:color/white"
+        app:backgroundTint="?attr/colorPrimary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

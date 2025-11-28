@@ -1,0 +1,12 @@
+
+;kotlin:S6310"Avoid hardcoded dispatchers.(çå²«8ÒÕŠ¹¬3
+zkotlin:S1192l"VDefine a constant instead of duplicating this literal "English Home Language" 4 times.(·Ş¨Äüÿÿÿÿ8ìÕŠ¹¬3
+~kotlin:S1192n"ZDefine a constant instead of duplicating this literal "First Additional Language" 8 times.(ñŸÎ¯øÿÿÿÿ8íÕŠ¹¬3
+pkotlin:S1192t"QDefine a constant instead of duplicating this literal "Natural Sciences" 5 times.(¸ªÛÓ8íÕŠ¹¬3
+okotlin:S1192w"PDefine a constant instead of duplicating this literal "Social Sciences" 6 times.(¡‚Å’8íÕŠ¹¬3
+pkotlin:S1192|"QDefine a constant instead of duplicating this literal "Life Orientation" 3 times.(©¡ Ï8íÕŠ¹¬3
+|kotlin:S1192}"]Define a constant instead of duplicating this literal "Economic Management Sciences" 5 times.(§Ä­Æ8îÕŠ¹¬3
+rkotlin:S1192‚"RDefine a constant instead of duplicating this literal "Physical Sciences" 4 times.(ìƒ”8îÕŠ¹¬3
+skotlin:S1192†"NDefine a constant instead of duplicating this literal "Life Sciences" 3 times.(ÅñÓ½ÿÿÿÿÿ8îÕŠ¹¬3
+skotlin:S1192‰"NDefine a constant instead of duplicating this literal "Creative Arts" 6 times.(ˆîîÃøÿÿÿÿ8îÕŠ¹¬3
+vkotlin:S3776X"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.( ™Ò–ùÿÿÿÿ8ñÕŠ¹¬3

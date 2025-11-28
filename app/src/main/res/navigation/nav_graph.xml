@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gradeSelectionFragment">
+
+    <fragment
+        android:id="@+id/gradeSelectionFragment"
+        android:name="com.example.edupath.ui.fragments.GradeSelectionFragment"
+        android:label="Select Your Grade"
+        tools:layout="@layout/fragment_grade_selection">
+        <action
+            android:id="@+id/action_gradeSelection_to_grade9Dashboard"
+            app:destination="@id/grade9DashboardFragment" />
+        <action
+            android:id="@+id/action_gradeSelection_to_grade10Dashboard"
+            app:destination="@id/grade10DashboardFragment" />
+        <action
+            android:id="@+id/action_gradeSelection_to_grade1112Dashboard"
+            app:destination="@id/grade1112DashboardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/grade9DashboardFragment"
+        android:name="com.example.edupath.ui.fragments.Grade9DashboardFragment"
+        android:label="Grade 9 Dashboard"
+        tools:layout="@layout/fragment_grade9_dashboard" />
+
+    <fragment
+        android:id="@+id/grade10DashboardFragment"
+        android:name="com.example.edupath.ui.fragments.Grade10DashboardFragment"
+        android:label="Grade 10 Dashboard"
+        tools:layout="@layout/fragment_grade10_dashboard" />
+
+    <fragment
+        android:id="@+id/grade1112DashboardFragment"
+        android:name="com.example.edupath.ui.fragments.Grade1112DashboardFragment"
+        android:label="Grades 11-12 Dashboard"
+        tools:layout="@layout/fragment_grade1112_dashboard" />
+
+</navigation>
